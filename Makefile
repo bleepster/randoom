@@ -1,0 +1,17 @@
+RANDOOM_SRC_DIR= src
+RANDOOM=randoom
+
+RANDOOM_TEST_DIR= test
+RANDOOMT=randoomt
+
+all: $(RANDOOM) $(RANDOOMT)
+
+$(RANDOOM):
+	$(MAKE) -C $(RANDOOM_SRC_DIR)
+
+$(RANDOOMT):
+	$(MAKE) -C $(RANDOOM_TEST_DIR)
+
+clean:
+	$(MAKE) clean -C $(RANDOOM_SRC_DIR)
+	$(MAKE) clean -C $(RANDOOM_TEST_DIR)
