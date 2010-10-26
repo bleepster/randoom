@@ -15,7 +15,7 @@ long int randoom(void)
     srand48_r(tv.tv_usec, &buff);
     lrand48_r(&buff, &res);
     rval = (res % (tv.tv_usec + 1)) / 100;
-#elif defined (__FreeBSD__)
+#elif (defined (__FreeBSD__) || defined (__OpenBSD__))
     gettimeofday(&tv, NULL);
     rval = (arc4random() % (tv.tv_usec + 1)) / 100;
 #else
