@@ -7,11 +7,11 @@ RANDOOMT=randoomt
 all: $(RANDOOM) $(RANDOOMT)
 
 $(RANDOOM):
-	$(MAKE) -C $(RANDOOM_SRC_DIR)
+	cd $(RANDOOM_SRC_DIR); make
 
 $(RANDOOMT):
-	$(MAKE) -C $(RANDOOM_TEST_DIR)
+	cd $(RANDOOM_TEST_DIR); make
 
 clean:
-	$(MAKE) clean -C $(RANDOOM_SRC_DIR)
-	$(MAKE) clean -C $(RANDOOM_TEST_DIR)
+	cd $(RANDOOM_SRC_DIR); $(MAKE) clean
+	cd $(RANDOOM_TEST_DIR); $(MAKE) clean
